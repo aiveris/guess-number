@@ -1,11 +1,9 @@
 #number-guess,
+#historyTx,
 #history {
   max-width: 400px;
   margin: 0 auto;
-}
-
-#history {
-  margin-top: 16px;
+  font-size: 20px;
 }
 
 .banner {
@@ -18,4 +16,12 @@
 #result {
   max-width: 400px;
   margin: 0 auto;
+  font-size: 20px;
+}
+
+h2 {
+  color: #838080;
+  font-size: 30px;
+  margin-top: auto;
+  margin-bottom: 30px;
 }
