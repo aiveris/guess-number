@@ -1,5 +1,6 @@
 let guesses = [];
-let score = 0;
+let score = 1;
+
 let correctNumber = getRandomNumber();
 
 window.onload = function () {
