@@ -3,10 +3,10 @@ let score = 1;
 let correctNumber = getRandomNumber();
 
 window.onload = function () {
-  document.getElementById('number-submit').addEventListener('click', playGame);
+  document.getElementById('number-guess').select();
   document
     .getElementById('number-submit')
-    .addEventListener('click', cleanInput);
+    .addEventListener('click', playGame, cleanInput);
 };
 
 function playGame() {
@@ -57,7 +57,7 @@ function getDialog(dialogType, text) {
 
 function showYouWon() {
   const text =
-    'You guessed the number ' + correctNumber + ' from ' + score + ' times';
+    'You guessed number ' + correctNumber + ' from ' + score + ' times';
   let dialog = getDialog('won', text);
   document.getElementById('result').innerHTML = dialog;
 }
