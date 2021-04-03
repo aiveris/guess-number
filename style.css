@@ -1,0 +1,22 @@
+#number-guess,
+#result,
+#history {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#history {
+  margin-top: 16px;
+}
+
+.banner {
+  color: #f51ed1;
+  font-size: 60px;
+  font-family: sans-serif;
+  margin-top: 100px;
+}
+
+#placeholder {
+  /* margin-top: 10px; */
+  padding-top: 50px;
+}
