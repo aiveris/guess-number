@@ -1,17 +1,18 @@
 let guesses = [];
 let score = 1;
-
 let correctNumber = getRandomNumber();
 
 window.onload = function () {
   document.getElementById('number-submit').addEventListener('click', playGame);
-  document.getElementById('restart-game').addEventListener('click', initGame);
+  document
+    .getElementById('number-submit')
+    .addEventListener('click', cleanInput);
 };
 
 function playGame() {
   const numberGuess = document.getElementById('number-guess').value;
   displayResult(numberGuess);
-  saveGuessHistory(numberGuess);
+  guesses.push(numberGuess);
   displayHistory();
 }
 
@@ -25,37 +26,14 @@ function displayResult(numberGuess) {
   }
 }
 
-function initGame() {
-  correctNumber = getRandomNumber();
-  document.getElementById('result').innerHTML = '';
-  guesses = [];
-  displayHistory();
-}
-
 function getRandomNumber() {
   const randomNumber = Math.random();
   const wholeNumber = Math.floor(randomNumber * 100);
   return wholeNumber;
 }
 
-function saveGuessHistory(guess) {
-  guesses.push(guess);
-}
-
 function displayHistory() {
-  let index = guesses.length - 1;
-  let list = "<ul class='list-group'>";
-
-  while (index >= 0) {
-    list +=
-      "<li class='list-group-item'>" +
-      'You guessed ' +
-      guesses[index] +
-      '</li>';
-    index--;
-  }
-  list += '</ul>';
-  document.getElementById('history').innerHTML = list;
+  document.getElementById('history').innerHTML = guesses;
   score++;
 }
 
@@ -94,4 +72,15 @@ function showNumberBelow() {
   const text = 'Your guess is too low!';
   let dialog = getDialog('danger', text);
   document.getElementById('result').innerHTML = dialog;
+}
+
+document.addEventListener('keydown', event => {
+  if (event.code === 'Enter') {
+    playGame();
+    cleanInput();
+  }
+});
+
+function cleanInput() {
+  document.getElementById('number-guess').value = '';
 }
