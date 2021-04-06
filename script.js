@@ -57,25 +57,25 @@ function getDialog(dialogType, text) {
 
 function showYouWon() {
   const text =
-    'You guessed number ' + correctNumber + ' from ' + score + ' times';
+    'Done! Guessed number ' + correctNumber + ' from ' + score + ' times!';
   let dialog = getDialog('won', text);
   document.getElementById('result').innerHTML = dialog;
 }
 
 function showNumberAbove() {
-  const text = 'Your guess is too high!';
+  const text = 'Your guess is too high';
   let dialog = getDialog('warning', text);
   document.getElementById('result').innerHTML = dialog;
 }
 
 function showNumberBelow() {
-  const text = 'Your guess is too low!';
+  const text = 'Your guess is too low';
   let dialog = getDialog('danger', text);
   document.getElementById('result').innerHTML = dialog;
 }
 
 document.addEventListener('keydown', event => {
-  if (event.code === 'Enter') {
+  if (event.code === 'Enter'||event.code === 'NumpadEnter') {
     playGame();
     cleanInput();
   }
