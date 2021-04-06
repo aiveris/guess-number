@@ -40,8 +40,8 @@ function displayHistory() {
 function getDialog(dialogType, text) {
   let dialog;
   switch (dialogType) {
-    case 'info':
-      dialog = "<div class='alert alert-info' role='alert'>";
+    case 'warning':
+      dialog = "<div class='alert alert-warning' role='alert'>";
       break;
     case 'danger':
       dialog = "<div class='alert alert-danger' role='alert'>";
@@ -64,7 +64,7 @@ function showYouWon() {
 
 function showNumberAbove() {
   const text = 'Your guess is too high!';
-  let dialog = getDialog('info', text);
+  let dialog = getDialog('warning', text);
   document.getElementById('result').innerHTML = dialog;
 }
 
